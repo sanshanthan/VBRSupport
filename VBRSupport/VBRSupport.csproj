@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B54F91B-62F2-42C3-8910-0252597EE3D8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VBRSupport</RootNamespace>
+    <AssemblyName>VBRSupport</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="SkinSoft.OSSkin, Version=3.2.0.0, Culture=neutral, PublicKeyToken=669afa176ca71378">
+      <HintPath>..\..\..\SkinSoft.OSSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="CustomerCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerCard.Designer.cs">
+      <DependentUpon>CustomerCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerHistory.designer.cs">
+      <DependentUpon>CustomerHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHistoryReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerHistoryReportViewer.designer.cs">
+      <DependentUpon>CustomerHistoryReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerList.Designer.cs">
+      <DependentUpon>CustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerListReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerListReportViewer.Designer.cs">
+      <DependentUpon>CustomerListReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\CustomerDA.cs" />
+    <Compile Include="DA\CustomerHistoryDA.cs" />
+    <Compile Include="DA\CustPayCalDA.cs" />
+    <Compile Include="DA\DueCustomersDA.cs" />
+    <Compile Include="DA\JobCardHardwareDA.cs" />
+    <Compile Include="DA\NoRespondLast30DaysDA.cs" />
+    <Compile Include="DA\NotAvailableCustomersDA.cs" />
+    <Compile Include="DA\PaymentDetailsDA.cs" />
+    <Compile Include="DA\PaymentInstallmentDA.cs" />
+    <Compile Include="DA\SupportDetailsDA.cs" />
+    <Compile Include="DA\VBRAsia_CustomersDA.cs" />
+    <Compile Include="DA\VBRStaffDA.cs" />
+    <Compile Include="DueCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DueCustomers.Designer.cs">
+      <DependentUpon>DueCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DueCustomersReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DueCustomersReportViewer.Designer.cs">
+      <DependentUpon>DueCustomersReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSize.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\HistoryModel.cs" />
+    <Compile Include="Models\JobCardHardwareModel.cs" />
+    <Compile Include="Models\PaymentInstallmentModel.cs" />
+    <Compile Include="Models\PaymentsModel.cs" />
+    <Compile Include="Models\SupportDetailsModel.cs" />
+    <Compile Include="Models\VBRAsiaCusModel.cs" />
+    <Compile Include="Models\VBRStaffModel.cs" />
+    <Compile Include="NoRespondLast30Days.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoRespondLast30Days.Designer.cs">
+      <DependentUpon>NoRespondLast30Days.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoRespondLast30DaysReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoRespondLast30DaysReportViewer.Designer.cs">
+      <DependentUpon>NoRespondLast30DaysReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Not AvailableCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Not AvailableCustomers.Designer.cs">
+      <DependentUpon>Not AvailableCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotAvailableCustomersReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotAvailableCustomersReportViewer.Designer.cs">
+      <DependentUpon>NotAvailableCustomersReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomerCard.resx">
+      <DependentUpon>CustomerCard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHistory.resx">
+      <DependentUpon>CustomerHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHistoryReport.rdlc" />
+    <EmbeddedResource Include="CustomerHistoryReportViewer.resx">
+      <DependentUpon>CustomerHistoryReportViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerList.resx">
+      <DependentUpon>CustomerList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerListReport.rdlc" />
+    <EmbeddedResource Include="CustomerListReportViewer.resx">
+      <DependentUpon>CustomerListReportViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DueCustomers.resx">
+      <DependentUpon>DueCustomers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DueCustomersReport.rdlc" />
+    <EmbeddedResource Include="DueCustomersReportViewer.resx">
+      <DependentUpon>DueCustomersReportViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoRespondLast30Days.resx">
+      <DependentUpon>NoRespondLast30Days.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoRespondLast30DaysReport.rdlc" />
+    <EmbeddedResource Include="NoRespondLast30DaysReportViewer.resx">
+      <DependentUpon>NoRespondLast30DaysReportViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Not AvailableCustomers.resx">
+      <DependentUpon>Not AvailableCustomers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotAvailableCustomersReport.rdlc" />
+    <EmbeddedResource Include="NotAvailableCustomersReportViewer.resx">
+      <DependentUpon>NotAvailableCustomersReportViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tree.resx">
+      <DependentUpon>Tree.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\DataSources\CustomerModel.datasource" />
+    <None Include="Properties\DataSources\HistoryModel.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Singleton.cs" />
+    <Compile Include="Tree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tree.Designer.cs">
+      <DependentUpon>Tree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VBRAsia_Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBRAsia_Customers.Designer.cs">
+      <DependentUpon>VBRAsia_Customers.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBRUN">
+      <Guid>{EA544A21-C82D-11D1-A3E4-00A0C90AEA82}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Male.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginbg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginbutton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bg_Image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motion_login_shot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttons_PNG34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttons_PNG105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttons_PNG32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
